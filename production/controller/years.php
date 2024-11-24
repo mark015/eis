@@ -1,7 +1,7 @@
 
 
 <div class="container mt-4">
-    <h1>Employee Records</h1>
+    <h1>Records</h1>
     <!-- Search Section -->
     <div class="row mb-3 search-container">
         <label for="searchLastName" class="form-label">Search by Last Name:</label>
