@@ -15,6 +15,8 @@
       include 'script/years.php ';
     }else if($link == "dashboard"){
       include 'script/dashboard.php ';
+    }else if($link == "profile"){
+      include 'script/profile.php ';
     }
   ?>
   </body>

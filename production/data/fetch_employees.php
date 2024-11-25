@@ -13,9 +13,9 @@ try {
     // Base query
     $query = "SELECT employee.id as eid,
                 plantilla_item_number, date_original_app, first_name, 
-                middle_name, last_name, ext_name, empoyee_number, 
+                middle_name, last_name, ext_name, empoyee_number, position,
                 emp_status.status AS employment_status, gsis, philhealth, 
-                pagibig, employee.status AS employee_status
+                pagibig, employee.status AS employee_status,TIMESTAMPDIFF(YEAR, `date_original_app`, CURDATE()) as year_of_service
               FROM employee
               INNER JOIN emp_status ON employee.employment_status_id = emp_status.id";
 

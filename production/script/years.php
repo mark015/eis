@@ -2,11 +2,13 @@
     $(document).ready(function () {
     // Function to load employees based on search query and pagination
     function loadEmployees(page = 1, searchQuery = '') {
+        var numberOfyear = <?php echo isset($_GET['year']) && !empty($_GET['year']) ? $_GET['year'] : '0'; ?>;
         $.ajax({
             url: 'data/numberService.php', // Backend endpoint
             type: 'GET',
             dataType: 'json',
             data: {
+                numberOfYears: numberOfyear,
                 page: page,
                 searchQuery: searchQuery
             },

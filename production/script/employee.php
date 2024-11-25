@@ -1,6 +1,6 @@
 <script>
 let currentPage = 1; // Start with the first page
-const recordsPerPage = 3; // Number of records per page
+const recordsPerPage = 10; // Number of records per page
 
 // Function to fetch and display employee data with pagination
 function fetchEmployees(lastName = '', page = 1) {
@@ -32,16 +32,16 @@ function fetchEmployees(lastName = '', page = 1) {
                             <td>${employee.empoyee_number || 'N/A'}</td>
                             <td>${employee.plantilla_item_number || 'N/A'}</td>
                             <td>${employee.date_original_app || 'N/A'}</td>
+                            <td>${employee.position || 'N/A'}</td>
                             <td>${employee.employment_status || 'N/A'}</td>
-                            <td>${employee.gsis || 'N/A'}</td>
-                            <td>${employee.philhealth || 'N/A'}</td>
-                            <td>${employee.pagibig || 'N/A'}</td>
+                            <td>${employee.year_of_service || 'N/A'}</td>
                             <td>${employee.employee_status || 'N/A'}</td>
                             <td>
                                 ${role !== 'User' 
-                                ? `<button class="btn btn-danger" data-delete-id="${employee.eid}" id="deleteEmployee"><i class="fa fa-trash"></i></button>` 
+                                ? `<button class="btn btn-sm btn-danger" data-delete-id="${employee.eid}" id="deleteEmployee"><i class="fa fa-trash"></i></button>` 
                                 : ''}
-                                <button class="btn btn-secondary" data-update-id="${employee.eid}" id="updateEmployee"><i class="fa fa-pencil"></i></button>
+                                <button class="btn btn-sm btn-secondary" data-update-id="${employee.eid}" id="updateEmployee"><i class="fa fa-pencil"></i></button>
+                                <a href="index?link=viewEmployee&id=${employee.eid}" class="btn btn-sm btn-primary"  id="viewEmployee"><i class="fa fa-eye"></i></a>
                             </td>
                         </tr>`;
                     });
@@ -211,6 +211,7 @@ $(document).on('click', '#updateEmployee', function() {
                 $('#last_name').val(employee.last_name);
                 $('#ext_name').val(employee.ext_name);
                 $('#date_appoint').val(employee.date_original_app);
+                $('#position').val(employee.position);
                 $('#employment_status_id').val(employee.employment_status_id);
                 $('#gsis').val(employee.gsis);
                 $('#philhealth').val(employee.philhealth);
@@ -234,6 +235,7 @@ $(document).on('click', '#updateEmp' , function(){
     var  last_name =$('#last_name').val();
     var  ext_name =$('#ext_name').val();
     var  date_appoint =$('#date_appoint').val();
+    var  position =$('#position').val();
     var  employment_status_id =$('#employment_status_id').val();
     var  gsis =$('#gsis').val();
     var  philhealth =$('#philhealth').val();
@@ -252,6 +254,7 @@ $(document).on('click', '#updateEmp' , function(){
             last_name: last_name,
             ext_name: ext_name,
             date_appoint: date_appoint,
+            position:position,
             employment_status_id: employment_status_id,
             gsis: gsis,
             philhealth: philhealth,

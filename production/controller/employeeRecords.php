@@ -18,10 +18,9 @@
                 <th>Employee Number</th>
                 <th>Plantilla Item Number</th>
                 <th>Date Original Appointment</th>
+                <th>Position</th>
                 <th>Employment Status</th>
-                <th>GSIS</th>
-                <th>PhilHealth</th>
-                <th>Pag-IBIG</th>
+                <th>Number of Service</th>
                 <th>Status</th>
                 <th>Action</th>
             </tr>
@@ -86,13 +85,18 @@
                         </div>
 
                         <!-- Original date of Appointment -->
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <label for="date_appoint" class="form-label">Date of Appointment</label>
                             <input type="date" class="form-control" id="date_appoint" name="date_appoint">
                         </div>
+                        <!-- Position -->
+                        <div class="col-md-3">
+                            <label for="position" class="form-label">Position</label>
+                            <input type="text" class="form-control" id="position" name="position" placeholder="Enter Position">
+                        </div>
                         
                         <!-- Employment Status -->
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <label for="employment_status_id" class="form-label required">Employment Status</label>
                             <select class="form-select form-control" id="employment_status_id" name="employment_status_id" required>
                                 <option selected disabled>Choose Employment Status</option>
@@ -112,7 +116,7 @@
                             </select>
                         </div>
                         <!-- GSIS -->
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <label for="gsis" class="form-label">GSIS</label>
                             <input type="text" class="form-control" id="gsis" name="gsis" placeholder="Enter GSIS Number">
                         </div>

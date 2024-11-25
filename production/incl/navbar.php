@@ -10,7 +10,7 @@
                     <img src="images/off_logo.png" alt=""><?php echo $rowUser['name'];?>
                   </a>
                   <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item"  href="profile"> Profile</a>
+                    <a class="dropdown-item"  href="index?link=profile"> Profile</a>
                     <a class="dropdown-item"  href="logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
                   </div>
                 </li>

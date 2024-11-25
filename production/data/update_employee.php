@@ -13,6 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $middle_name = $_POST['middle_name'] ?? null;
     $last_name = $_POST['last_name'];
     $ext_name = $_POST['ext_name'] ?? null;
+    $position = $_POST['position'] ?? null;
     $employment_status_id = $_POST['employment_status_id'];
     $gsis = $_POST['gsis'] ?? null;
     $philhealth = $_POST['philhealth'] ?? null;
@@ -28,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 last_name = ?, 
                 ext_name= ?,
                 empoyee_number= ?,
+                position= ?,
                 employment_status_id= ?,
                 gsis = ?, 
                 philhealth= ?, 
@@ -39,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($stmt) {
         // Bind parameters
-        $stmt->bind_param('ssssssssssssi', 
+        $stmt->bind_param('sssssssssssssi', 
             $plantilla_item_number, 
             $date_appoint, 
             $first_name, 
@@ -47,6 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $last_name, 
             $ext_name, 
             $employee_id, 
+            $position, 
             $employment_status_id, 
             $gsis, 
             $philhealth, 

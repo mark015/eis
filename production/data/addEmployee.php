@@ -16,6 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $last_name = $_POST['last_name'];
     $ext_name = $_POST['ext_name'] ?? null;
     $employment_status_id = $_POST['employment_status_id'];
+    $position = $_POST['position'] ?? null;
     $gsis = $_POST['gsis'] ?? null;
     $philhealth = $_POST['philhealth'] ?? null;
     $pagibig = $_POST['pagibig'] ?? null;
@@ -23,14 +24,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // SQL query to insert data
     $sql = "INSERT INTO employee 
-            (plantilla_item_number, date_original_app, first_name, middle_name, last_name, ext_name, empoyee_number, employment_status_id, gsis, philhealth, pagibig, status)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            (plantilla_item_number, date_original_app, first_name, middle_name, last_name, ext_name, empoyee_number, position, employment_status_id, gsis, philhealth, pagibig, status)
+            VALUES (?, ?, ?, ?, ?, ?,?, ?, ?, ?, ?, ?, ?)";
 
     $stmt = $conn->prepare($sql);
 
     if ($stmt) {
         // Bind parameters
-        $stmt->bind_param('ssssssssssss', 
+        $stmt->bind_param('sssssssssssss', 
             $plantilla_item_number, 
             $date_appoint, 
             $first_name, 
@@ -38,6 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $last_name, 
             $ext_name, 
             $employee_id, 
+            $position, 
             $employment_status_id, 
             $gsis, 
             $philhealth, 
